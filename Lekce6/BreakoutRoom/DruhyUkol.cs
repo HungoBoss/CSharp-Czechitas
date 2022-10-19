@@ -78,18 +78,21 @@ public class Program
 		// implementujte tridy obdelnik a kruh, ktere oba interfacy pouzivaji
 		// vlozte jejich instance do seznamu a zavolejte na nich prislusne metody na vypocet obsahu a obvodu
 		
+		// Seznam obdélníků
 		List<Obdelnik> obdelniky = new List<Obdelnik>() {
 			new Obdelnik(5, 3),	
 			new Obdelnik(2, 4),
 			new Obdelnik(2, 5)
 		};
 		
+		// Seznam kruhů
 		List<Kruh> kruhy = new List<Kruh>()	{
 			new Kruh(5),
 			new Kruh(3),
 			new Kruh(1)
 		};
 		
+		// Procházíme každý obdélník a vypisujeme jeho obsah a obvod
 		Console.WriteLine("Obdelniky");
 		foreach (var obdelnik in obdelniky)
 		{
@@ -97,6 +100,7 @@ public class Program
 			Console.WriteLine("Obvod: " + obdelnik.SpocitejObvod());
 		}
 		
+		// Procházíme každý kruh a vypisujeme jeho obsah a obvod
 		Console.WriteLine("\nKruhy");
 		foreach (var kruh in kruhy)
 		{

@@ -1,52 +1,68 @@
 using System;
 using System.Collections.Generic;
 
+// Rozhraní IUmiPocitatObsah
 interface IUmiPocitatObsah
 {
-	double SpocitejObsah();	
+	// Třídy, které implementují rozhraní IUmiPocitat musí implementovat
+	// i tuto metodu.
+	double SpocitejObsah();
 }
 
+// Rozhraní IUmiPocitatObvod
 interface IUmiPocitatObvod
 {
+	// Třídy, které implementují rozhraní IUmiPocitatObvod musí implementovat
+	// i tuto metodu.
 	double SpocitejObvod();
 }
 
+// Třída Obdélník, která implementuje rozhraní IUmiPocitatObsah a IUmiPocitatObvod
 public class Obdelnik : IUmiPocitatObsah, IUmiPocitatObvod
 {
+	// Vlastnosti obdélníku
 	public double A { get; set; }
 	public double B { get; set; }
 	
+	// Konstruktor třídy Obdelnik
 	public Obdelnik(double a, double b)
 	{
 		A = a;
 		B = b;
 	}
 	
+	// Implementovaná metoda SpocitejObsah
 	public double SpocitejObsah() 
 	{
 		return A * B;
 	}
 	
+	// Implementovaná metoda SpocitejObvod
 	public double SpocitejObvod()
 	{
 		return 2 * (A + B);
 	}
 }
 
+// Třída Kruh, která implementuje rozhraní IUmiPocitatObsah a IUmiPocitatObvod
 public class Kruh : IUmiPocitatObsah, IUmiPocitatObvod
 {
+	// Vlastnosti kruhu
 	public double R { get; set; }
 	
+	// Konstruktor třídy Kruh
 	public Kruh(double r)
 	{
 		R = r;
 	}
 	
+	// Implementovaná metoda SpocitejObsah
 	public double SpocitejObsah()
 	{
 		return 3.14 * R * R;
 	}
 	
+	// Implementovaná metoda SpocitejObvod
 	public double SpocitejObvod()
 	{
 		return 2 * 3.14 * R;
